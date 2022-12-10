@@ -9,3 +9,6 @@ thumbs.db
 .DS_Store
 .idea
 
+
+# Ignore build folder
+**/build/
