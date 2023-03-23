@@ -1,7 +1,5 @@
-import os
-
-import pkg_resources
 from setuptools import setup, find_packages
+
 
 setup(
     name="whisper",
@@ -14,15 +12,9 @@ setup(
     url="https://github.com/openai/whisper",
     license="MIT",
     packages=find_packages(exclude=["tests*"]),
-    install_requires=[
-        str(r)
-        for r in pkg_resources.parse_requirements(
-            open(os.path.join(os.path.dirname(__file__), "requirements.txt"))
-        )
-    ],
-    entry_points = {
-        'console_scripts': ['whisper=whisper.transcribe:cli'],
+    entry_points={
+        "console_scripts": ["whisper=whisper.transcribe:cli"],
     },
     include_package_data=True,
-    extras_require={'dev': ['pytest']},
+    extras_require={"dev": ["pytest"]},
 )
